@@ -5,3 +5,23 @@ CREATE DATABASE nitip.
 
 2. Masuk ke database nitip
 /c nitip.
+
+3. Membuat tabel nitiperz
+
+
+4. Membuat tabel alamat
+
+
+5. Membuat tabel tagihan
+
+
+6. Membuat tabel mitra
+
+
+7. Membuat tabel customer
+
+
+8. Membuat tabel produk
+
+
+9. Membuat tabel keranjang
