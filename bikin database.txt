@@ -1,13 +1,20 @@
 buka postgresSQL
 
 1. Membuat database nitip
-CREATE DATABASE nitip.
+CREATE DATABASE nitip;
 
 2. Masuk ke database nitip
-/c nitip.
+/c nitip;
 
 3. Membuat tabel nitiperz
-
+CREATE TABLE nitiperz(
+user_id VARCHAR(12) NOT NULL,
+nama VARCHAR(25) NOT NULL,
+password VARCHAR(80) NOT NULL,
+telepon VARCHAR(12) NOT NULL,
+saldo INT NOT NULL DEFAULT 0,
+CONSTRAINT nitiperz_id PRIMARY KEY(user_id),
+);
 
 4. Membuat tabel alamat
 
