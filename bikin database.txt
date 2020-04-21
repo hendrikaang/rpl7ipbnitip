@@ -7,13 +7,13 @@ CREATE DATABASE nitip;
 /c nitip;
 
 3. Membuat tabel nitiperz
-CREATE TABLE nitiperz(
-user_id VARCHAR(12) NOT NULL,
-nama VARCHAR(25) NOT NULL,
-password VARCHAR(80) NOT NULL,
-telepon VARCHAR(12) NOT NULL,
-saldo INT NOT NULL DEFAULT 0,
-CONSTRAINT nitiperz_id PRIMARY KEY(user_id),
+    CREATE TABLE nitiperz(
+    user_id VARCHAR(12) NOT NULL,
+    nama VARCHAR(25) NOT NULL,
+    password VARCHAR(80) NOT NULL,
+    telepon VARCHAR(12) NOT NULL,
+    saldo INT NOT NULL DEFAULT 0,
+    CONSTRAINT nitiperz_id PRIMARY KEY(user_id)
 );
 
 4. Membuat tabel alamat
@@ -26,7 +26,7 @@ CREATE TABLE Alamat(
     Kota/Kabupaten VARCHAR(25) NOT NULL,
     kodePos CHAR(5) NOT NULL,
     CONSTRAINT
-)
+);
 
 5. Membuat tabel tagihan
 CREATE TABLE Tagihan(
@@ -36,17 +36,21 @@ CREATE TABLE Tagihan(
     ID_Mitra VARCHAR(12),
     waktuKadaluarsa TIMESTAMP,
     CONSTRAINT
-)
+);
 
 
 6. Membuat tabel mitra
-
+CREATE TABLE Customer(
+    UserID VARCHAR(12) NOT NULL,
+    Rating FLOAT NOT NULL DEFAULT 5.0,
+    jam_operasional TIMESTAMP NOT NULL
+);
 
 7. Membuat tabel customer
 CREATE TABLE Customer(
     UserID VARCHAR(12) NOT NULL,
     kodeKeranjang VARCHAR(12) NOT NULL
-)
+);
 
 
 8. Membuat tabel produk
@@ -57,7 +61,7 @@ CREATE TABLE Produk(
     Deskripsi TEXT NOT NULL,
     Harga INTEGER(>=0) NOT NULL,
     Ketentuan TEXT,
-)
+);
 
 
 9. Membuat tabel keranjang
@@ -66,4 +70,4 @@ CREATE TABLE Keranjang(
     IDProduk VARCHAR(20) NOT NULL,
     banyakProduk INTEGER(>=0) NOT NULL,
     Harga INTEGER(>=0) NOT NULL
-)
+);
