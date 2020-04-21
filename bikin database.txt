@@ -17,18 +17,53 @@ CONSTRAINT nitiperz_id PRIMARY KEY(user_id),
 );
 
 4. Membuat tabel alamat
-
+CREATE TABLE Alamat(
+    UserID VARCHAR(12) NOT NULL,
+    No_Rumah/Gedung VARCHAR(25) NOT NULL,
+    Nama_Jalan VARCHAR(25) NOT NULL,
+    Kelurahan VARCHAR(25) NOT NULL,
+    Kecamatan VARCHAR(25) NOT NULL,
+    Kota/Kabupaten VARCHAR(25) NOT NULL,
+    kodePos CHAR(5) NOT NULL,
+    CONSTRAINT
+)
 
 5. Membuat tabel tagihan
+CREATE TABLE Tagihan(
+    IDTagihan VARCHAR(15) NOT NULL,
+    UserID VARCHAR(12) NOT NULL,
+    kodeKeranjang(12) VARCHAR(12) NOT NULL,
+    ID_Mitra VARCHAR(12),
+    waktuKadaluarsa TIMESTAMP,
+    CONSTRAINT
+)
 
 
 6. Membuat tabel mitra
 
 
 7. Membuat tabel customer
+CREATE TABLE Customer(
+    UserID VARCHAR(12) NOT NULL,
+    kodeKeranjang VARCHAR(12) NOT NULL
+)
 
 
 8. Membuat tabel produk
+CREATE TABLE Produk(
+    UserID VARCHAR(12) NOT NULL,
+    IDProduk VARCHAR(20) NOT NULL,
+    namaProduk VARCHAR(25) NOT NULL,
+    Deskripsi TEXT NOT NULL,
+    Harga INTEGER(>=0) NOT NULL,
+    Ketentuan TEXT,
+)
 
 
 9. Membuat tabel keranjang
+CREATE TABLE Keranjang(
+    kodeKeranjang VARCHAR(12) NOT NULL,
+    IDProduk VARCHAR(20) NOT NULL,
+    banyakProduk INTEGER(>=0) NOT NULL,
+    Harga INTEGER(>=0) NOT NULL
+)
