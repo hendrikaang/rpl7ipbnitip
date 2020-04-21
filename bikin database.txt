@@ -1,1 +1,7 @@
-testing-testing
+buka postgresSQL
+
+1. Membuat database nitip
+CREATE DATABASE nitip.
+
+2. Masuk ke database nitip
+/c nitip.
