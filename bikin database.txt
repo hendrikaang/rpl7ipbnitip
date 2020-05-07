@@ -1,83 +1,85 @@
-buka postgresSQL
-
-1. Membuat database nitip
 CREATE DATABASE nitip;
 
-2. Masuk ke database nitip
-/c nitip;
 
-3. Membuat tabel nitiperz
+\c nitip;
+
+
 CREATE TABLE nitiperz(
     userID SERIAL,
     nama VARCHAR(25) NOT NULL,
     password VARCHAR(80) NOT NULL,
     telepon VARCHAR(12) NOT NULL,
-    saldo INT NOT NULL DEFAULT 0,
-    CONSTRAINT pk_nitiperz PRIMARY KEY(userID)
+    saldo INT NOT NULL DEFAULT 0
 );
 
-4. Membuat tabel alamat
 CREATE TABLE alamat(
     alamatID SERIAL,
-    userID VARCHAR(12) NOT NULL,
+    userID INT NOT NULL,
     tempat VARCHAR(25) NOT NULL,
     jalan VARCHAR(25) NOT NULL,
     kelurahan VARCHAR(25) NOT NULL,
     kecamatan VARCHAR(25) NOT NULL,
     kota VARCHAR(25) NOT NULL,
-    kodepos CHAR(5) NOT NULL,
-    CONSTRAINT pk_alamat PRIMARY KEY(alamatID),
-    CONSTRAINT fk_alamat FOREIGN KEY(userID) REFERENCES nitiperz(userID)
-);
-
-5. Membuat tabel tagihan
-CREATE TABLE Tagihan(
-    IDTagihan VARCHAR(15) NOT NULL,
-    userID VARCHAR(12) NOT NULL,
-    kodeKeranjang(12) VARCHAR(12) NOT NULL,
-    ID_Mitra VARCHAR(12),
-    waktuKadaluarsa TIMESTAMP,
-    CONSTRAINT
+    kodepos CHAR(5) NOT NULL
 );
 
 
-6. Membuat tabel mitra
+CREATE TABLE tagihan(
+    tagihanID SERIAL,
+    custID INT NOT NULL,
+    kedaluarsa TIMESTAMP
+);
+
+
 CREATE TABLE mitra(
     mitraID SERIAL,
-    userID VARCHAR(12) NOT NULL,
+    userID INT NOT NULL,
     rating FLOAT NOT NULL DEFAULT 5.0,
     jammulai TIME NOT NULL,
-    jamselesai TIME NOT NULL,
-    CONSTRAINT pk_mitra PRIMARY KEY(mitraID),
-    CONSTRAINT fk_mitra FOREIGN KEY(userID) REFERENCES nitiperz(userID)
+    jamselesai TIME NOT NULL
 );
 
-7. Membuat tabel customer
+
 CREATE TABLE customer(
     custID SERIAL,
-    userID VARCHAR(12) NOT NULL,
-    CONSTRAINT pk_customer PRIMARY KEY(custID),
-    CONSTRAINT fk1_customer FOREIGN KEY(userID) REFERENCES nitiperz(userID),
+    userID INT NOT NULL
 );
 
 
-8. Membuat tabel produk
-CREATE TABLE Produk(
-    userID VARCHAR(12) NOT NULL,
-    IDProduk VARCHAR(20) NOT NULL,
-    namaProduk VARCHAR(25) NOT NULL,
-    Deskripsi TEXT NOT NULL,
-    Harga INTEGER(>=0) NOT NULL,
-    Ketentuan TEXT,
+CREATE TABLE produk(
+    produkID SERIAL,
+    mitraID INT NOT NULL,
+    nama VARCHAR(25) NOT NULL,
+    deskripsi TEXT,
+    harga INT DEFAULT 0
 );
 
 
-9. Membuat tabel keranjang
 CREATE TABLE keranjang(
-    custID VARCHAR(12) NOT NULL,
-    produkID VARCHAR(20) NOT NULL,
+    custID INT NOT NULL,
+    produkID INT NOT NULL,
     banyak INT NOT NULL DEFAULT 0,
-    keterangan VARCHAR(150),
-    CONSTRAINT fk1_keranjang FOREIGN KEY(custID) REFERENCES customer(costID),
-    CONSTRAINT fk2_keranjang FOREIGN KEY(produkID) REFERENCES produk(produkID)
+    keterangan VARCHAR(150)
 );
+
+
+ALTER TABLE nitiperz ADD CONSTRAINT pk_nitiperz PRIMARY KEY(userID);
+
+ALTER TABLE alamat ADD CONSTRAINT pk_alamat PRIMARY KEY(alamatID);
+ALTER TABLE alamat ADD CONSTRAINT fk_alamat FOREIGN KEY(userID) REFERENCES nitiperz(userID);
+
+ALTER TABLE tagihan ADD CONSTRAINT pk_tagihan PRIMARY KEY(tagihanID);
+ALTER TABLE tagihan ADD CONSTRAINT fk_tagihan FOREIGN KEY(custID) REFERENCES customer(custID);
+
+ALTER TABLE mitra ADD CONSTRAINT pk_mitra PRIMARY KEY(mitraID);
+ALTER TABLE mitra ADD CONSTRAINT fk_mitra FOREIGN KEY(userID) REFERENCES nitiperz(userID);
+
+ALTER TABLE customer ADD CONSTRAINT pk_customer PRIMARY KEY(custID);
+ALTER TABLE customer ADD CONSTRAINT fk1_customer FOREIGN KEY(userID) REFERENCES nitiperz(userID);
+
+ALTER TABLE produk ADD CONSTRAINT pk_produk PRIMARY KEY(produkID);
+ALTER TABLE produk ADD CONSTRAINT fk_produk FOREIGN KEY(mitraID) REFERENCES mitra(mitraID);
+
+ALTER TABLE keranjang ADD CONSTRAINT fk1_keranjang FOREIGN KEY(custID) REFERENCES customer(custID);
+ALTER TABLE keranjang ADD CONSTRAINT fk2_keranjang FOREIGN KEY(produkID) REFERENCES produk(produkID);
+
