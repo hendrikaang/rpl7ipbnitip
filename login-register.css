@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+    font-size: 15px;
+}
+html,body
+{
+    height: 100%;
+    overflow: hidden;
+    background: skyblue;
+    background: linear-gradient(to right, #fff,rgba(54, 62, 245, 0.3));
+}
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98%;
+    max-height:700px;
+    
+}
+.container .panel
+{
+    width: 90%;
+    height: 90%;
+    box-shadow: 3px 4px 7px rgb(224, 214, 236);;
+}
+.row
+{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 100%;
+    background: #fff;
+}
+.liquid
+{
+    background:url('./assets/Ellipse2.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+.liquid h4
+{
+    text-align: left;
+    top: 2px;
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+.owl-carousel
+{
+    width: 10%;
+    height: 10%;
+    max-height: 50px;
+}
+.login_img
+{
+    float: right;
+    width: 50%;
+    height:50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-right: 3rem;
+}
+.owl-dots
+{
+    position: fixed;
+    padding-left: 1.2rem;
+    padding-bottom: 9rem;
+    display: flex !important;
+    flex-direction: column;  
+    transform: translateY(-240px); 
+}
+.owl-dots button
+{
+    border-radius: 5rem;
+    margin: .3rem 0; 
+}
+.owl-dots button span
+{
+    background: whitesmoke !important;
+    margin: 0rem .6rem !important;
+}
+.owl-dots .active
+{
+    border: 1px solid slateblue !important;
+}
+.owl-dots .active span
+{
+    background: slateblue !important;
+    margin: .3rem .5rem !important;
+}
+
+
+/*form*/
+.hero   
+{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+} 
+.form-box
+{
+    width: 380px; 
+    height: 480px;
+    left:300px;
+    position: relative;
+    margin: 4% auto;
+    background: #fff;
+    padding: 2px;
+    overflow: hidden;
+    z-index: 2;
+}
+.button-box
+{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;   
+    box-shadow: 0 0 20px 9px rgb(224, 214, 236);
+    border-radius: 30px; 
+}
+.toggle-btn
+{
+    padding: 10px 28px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#button
+{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px; 
+    height: 100%;
+    background: linear-gradient(to right, rgba(54, 62, 245, 0.3), rgb(211, 205, 240));
+    border-radius: 30px;
+    transition: .5s;
+}
+.form
+{
+    top: 100px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-form
+{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent; 
+}
+.submit-btn
+{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to left, rgba(54, 62, 245, 0.3), rgb(55, 18, 124));
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.check-box
+{
+    margin: 25px 10px 25px 0;
+}
+.form span
+{
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+#login
+{
+    left: 50px;
+    top: 150px
+}
+#register
+{
+    left: 450px;
+}

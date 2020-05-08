@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="login-register.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="panel">
+            <div class="row">
+                <div class="col liquid">
+                    <h4><img src="./assets/nitip.png" alt=""></h4>
+                    <div class="owl-carousel owl-theme">
+                    <img src="./assets/Asset 1.png" alt="" class="login_img">
+                    <img src="./assets/Asset 2.png" alt="" class="login_img">
+                    <img src="./assets/Asset 3.png" alt="" class="login_img">
+                    </div>
+                </div>
+                <div class="hero">
+                    <div class="form-box">
+                        <div class="button-box">
+                            <div id="button"></div>
+                            <button type="button" class="toggle-btn" onclick="login()" >Log In</button>
+                            <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                        </div>
+                        <form id="login" class="form">
+                            <input type="text" class="input-form" placeholder="Username" required>
+                            <input type="password" class="input-form" placeholder="Your Password" required>
+                            <input type="checkbox" class="check-box"><span>Remember Password</span>
+                            <button type="submit" class="submit-btn">Log In</button>
+                        </form>
+                        
+                        <form id="register" class="form">
+                            <input type="text" class="input-form" placeholder="Username" required>
+                            <input type="email" class="input-form" placeholder="Your Email" required>
+                            <input type="telepon" class="input-form" placeholder="Your Phone Number" required>
+                            <input type="password" name="password" class="input-form" placeholder="Your Password" required>
+                            <input type="password" name="password2" class="input-form" placeholder="Retype Your Password" required>
+                            <input type="checkbox" class="check-box" required><span>I agree to the term & condition</span>
+                            <button type="submit" class="submit-btn">Register</button>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: true,
+                items:1
+
+            });
+        });
+    </script>
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("button");
+
+        function register()
+        {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+        function login()
+        {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+    </script>
+    
+</body>
+</html>
