@@ -28,11 +28,11 @@
                             <button type="button" class="toggle-btn" onclick="login()" >Log In</button>
                             <button type="button" class="toggle-btn" onclick="register()">Register</button>
                         </div>
-                        <form id="login" class="form">
-                            <input type="text" class="input-form" placeholder="Username" required>
-                            <input type="password" class="input-form" placeholder="Your Password" required>
+                        <form id="login" class="form" action="login.php" method="POST" >
+                            <input type="text" class="input-form" name="nama" placeholder="Username" required>
+                            <input type="password" class="input-form" name="password" placeholder="Your Password" required>
                             <input type="checkbox" class="check-box"><span>Remember Password</span>
-                            <button type="submit" class="submit-btn">Log In</button>
+                            <input type="submit" class="submit-btn" name="login" value="login" />
                         </form>
                         
                         <form id="register" class="form" action="register.php" method="POST">
@@ -42,7 +42,7 @@
                             <input type="password" name="password1" class="input-form" placeholder="Your Password" required>
                             <input type="password" name="password2" class="input-form" placeholder="Retype Your Password" required>
                             <input type="checkbox" class="check-box" required><span>I agree to the term & condition</span>
-                            <input type="submit" class="submit-btn" name="register" value="register">Register/>
+                            <input type="submit" class="submit-btn" name="register" value="register"/>
                         </form> 
                     </div>
                 </div>

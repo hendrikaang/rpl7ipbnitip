@@ -14,6 +14,8 @@ if(isset($_POST['register'])){
         // query
         $query = pg_query("INSERT INTO nitiperz(nama, email, password, telepon)
                             VALUES('$nama', '$email', '$password1', '$telepon')");
+    }else{
+        echo("Password dan pengulangannya berbeda");
     }
 
     if($query){
