@@ -17,7 +17,11 @@ if(isset($_POST['register'])){
     }
 
     if($query){
-        header("Location: login.html")
+        header("Location: login-register.html");
+    }else{
+        echo("gagal regist");
     }
-}
 
+}
+echo("tetew");
+?>

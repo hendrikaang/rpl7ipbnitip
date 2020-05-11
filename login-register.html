@@ -35,14 +35,14 @@
                             <button type="submit" class="submit-btn">Log In</button>
                         </form>
                         
-                        <form id="register" class="form">
-                            <input type="text" class="input-form" placeholder="Username" required>
-                            <input type="email" class="input-form" placeholder="Your Email" required>
-                            <input type="telepon" class="input-form" placeholder="Your Phone Number" required>
-                            <input type="password" name="password" class="input-form" placeholder="Your Password" required>
+                        <form id="register" class="form" action="register.php" method="POST">
+                            <input type="text" class="input-form" name="nama" placeholder="Username" required>
+                            <input type="email" class="input-form" name="email" placeholder="Your Email" required>
+                            <input type="telepon" class="input-form" name="telepon" placeholder="Your Phone Number" required>
+                            <input type="password" name="password1" class="input-form" placeholder="Your Password" required>
                             <input type="password" name="password2" class="input-form" placeholder="Retype Your Password" required>
                             <input type="checkbox" class="check-box" required><span>I agree to the term & condition</span>
-                            <button type="submit" class="submit-btn">Register</button>
+                            <input type="submit" class="submit-btn" name="register" value="register">Register/>
                         </form> 
                     </div>
                 </div>
