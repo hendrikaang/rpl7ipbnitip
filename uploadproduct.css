@@ -1,11 +1,12 @@
 *{
-    box-sizing : border-box;
-    height: 40px;
-    margin: 5px 10px 10px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+    font-size: 15px;
 }
 body {
     margin: 0;
-    font-family: 'Segoe UI';
+    
 } 
 
 .home-navbar
@@ -50,7 +51,7 @@ body {
 .wrapper
 {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
