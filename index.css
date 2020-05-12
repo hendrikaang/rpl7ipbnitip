@@ -1,0 +1,39 @@
+/* Navbar */
+.nav-link {
+    text-transform: uppercase;
+    margin-right: 40px;
+}
+
+.nav-link:hover{
+    border-bottom: 3px solid #0B63DC;
+    margin-bottom: -3px;
+}
+
+/* Utility */
+.tombol {
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+
+.kiri {
+    width: 300px;
+    margin-top: 40px;
+    
+}
+
+.jumbotron{
+    text-align: center;
+    margin-top:-400px ;
+    background-color: transparent;
+    text-align: left;
+    margin-left: 700px;
+    font-size: 40px;
+}
+
+.jumbotron .display-4{
+    font-size: 50px;
+}
+
+.jumbotron .love{
+    margin-top: 35px;
+}
