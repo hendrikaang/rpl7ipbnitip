@@ -1,6 +1,8 @@
-<?php require_once("auth.php"); 
+<?php 
+require_once("auth.php"); 
 $id = $_SESSION["masuk"];
-$saldo = pg_query("SELECT saldo FROM nitiperz WHERE userID=$_SESSION["masuk"]");
+$query = pg_query($db, "SELECT * FROM nitiperz WHERE userid='$id'");
+$data = pg_fetch_assoc($query);
 
 ?>
 
@@ -48,30 +50,40 @@ $saldo = pg_query("SELECT saldo FROM nitiperz WHERE userID=$_SESSION["masuk"]");
           </div>
       </div>
       <div class="lower-mitracontainer">
+        <form id="update" class="form" action="updateprofile.php" method="POST">
           <div>
               <h4>Saldo </h4>
           </div>
-          <div> <h5>Rp <?php echo($_SESSION["masuk"]) ; ?></h5> </div>
+          <div> <h5>Rp <?php echo($data['saldo']) ; ?></h5> </div>
           <div>
             <label>Username:</label><br>
-            <input type="text" name="username" id="username" />
+            <input type="text" name="nama" id="username" value="<?php echo ($data['nama'])?>" />
           </div>
           <div>
             <label>Email:</label><br>
-            <input type="email" name="Email" id="Email" />
+            <input type="email" name="email" id="Email" value="<?php echo ($data['email'])?>"/>
           </div>
           <div>
             <label>Telepon:</label><br>
-            <input type="number" name="Telepon" id="Telepon" />
+            <input type="telepon" name="telepon" id="Telepon" value="<?php echo ($data['telepon'])?>"/>
           </div>
           <div>
             <label>Alamat:</label><br>
-            <input type="text" name="Alamat" id="Alamat" />
+            <input type="text" name="alamat" id="Alamat" />
+          </div>
+          <div>
+            <label>Password:</label><br>
+            <input type="password" name="password1" id="Password1" value="<?php echo ($data['password'])?>" />
+          </div>
+          <div>
+            <label>Ulangi Password:</label><br>
+            <input type="password" name="password2" id="Password2" value="<?php echo ($data['password'])?>" />
           </div>
           <br>
           <div>
-              <a href="#" class="btn">Edit</a>
+          <input type="submit" class="submit-btn" name="update" value="update"/>
           </div>
+        </form>
       </div>
 
 
