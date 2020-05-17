@@ -1,0 +1,143 @@
+/* Navbar */
+.nav-link {
+    text-transform: uppercase;
+    margin-right: 40px;
+
+}
+.nav-link:hover{
+    border-bottom: 3px solid #0B63DC;
+    margin-bottom: -3px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+    font-size: 15px;
+}
+body {
+    margin: 0;
+    
+} 
+
+.home-navbar
+{
+    display: inline-flex;
+    height: 57px;
+    top: 0;
+    background : #fff;
+    margin-bottom:0px;
+    border-bottom: 10px solid white;
+    z-index : 2;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25) !important;
+    width: 100%;
+}
+.logo
+{
+    height: 40px;
+    margin: 5px 10px 10px;
+}
+.home-navbar ul
+{
+    
+    display: flex;
+    padding-left: 55% ;
+    margin: 0;
+    list-style-type: none;
+    background-color: white;
+}
+.home-navbar ul li
+{
+    display: inline-block;
+}
+.home-navbar li a
+{
+   
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 25px 20px;
+}
+ 
+.wrapper
+{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.upload-product
+{
+    width: auto;
+    max-width: 500px;
+    height: 530px;
+    background: rgba(154, 158, 233, 0.3);
+    margin-top: 150px;
+    padding: 0px 80px;
+    border-radius: 5px;
+}
+
+.title
+{
+    font-size:22px;
+    text-align: center;
+    font-weight: bold;
+    color:  black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+} 
+.input-product-field
+{
+    padding: 0 50px;
+}
+.input-product-field .items
+{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.input-product-field .items .label-prod
+{
+    display: block;
+    font-size: 1em;
+    color: black;
+    text-transform: capitalize;
+    padding-bottom: 5px;
+}
+
+.input-product-field .items .input-prod,
+.input-product-field .items .text-area
+{
+    border: 0;
+    width: 100%;
+    padding: 8px 10px;
+    font-size : 14px;
+    color: black;
+    border-radius: 3px;
+}
+.items #deskripsi
+{
+    height: 200px;
+}
+.upload-btn
+{
+    margin: 0 30px;
+    background: rgb(124, 54, 255);
+    color: seashell;
+    font-size: 14px;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+footer
+{
+    width: 100%;
+    background-color:white ;
+    padding: 10px 0px;
+    margin-top : 50%;
+    text-align: center;
+    font-size: 12px;
+}
