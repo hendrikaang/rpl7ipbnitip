@@ -1,0 +1,297 @@
+*{
+    margin: 0;
+    padding: 2px;
+}
+body 
+{   
+    background-color : white;
+    font-family: 'Segoe UI';
+}
+
+.home-navbar
+{
+    display: inline-flex;
+    height: 62px;
+    top: 0;
+    background : #fff;
+    margin-bottom:0px;
+    border-bottom: 10px solid white;
+    z-index : 2;
+    width: 100%;
+}
+.homenavbar .logo
+{
+    padding: 10px 35px;
+    height: 40px;
+    margin: 5px 5px 10px;
+}
+.home-navbar ul
+{
+    
+    display: flex;
+    padding-left: 5% ;
+    margin: 0;
+    list-style-type: none;
+    background-color: white;
+}
+.home-navbar ul li
+{
+    display: inline-block;
+}
+.home-navbar li a
+{
+   
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 35px;
+}
+
+.form-control
+{
+    margin-top: 10px;
+    margin-left: 30px;
+    color: #F5F5F5;;
+    border: 1px solid whitesmoke !important;
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 20px !important;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25) !important;   
+}
+.fa-search
+{
+    color: black;
+}
+.input-group-text
+{
+    margin: 10px 5px 5px 0;
+    border: 1px solid whitesmoke !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    border-top-left-radius: 0px !important;
+    cursor: pointer;
+}
+.search-box
+{
+    display: inline-flex;
+    width: 60%;
+    height: 80px;
+}
+.order-bar
+{
+    width: 40%;
+    height: 57px;
+    margin-left:350px ;
+    
+    display: inline-block;
+}
+.order-bar ul
+{
+    display: inline-flex;
+    float: right;
+}
+.order-bar ul li
+{
+    border-left: 1px solid white;
+    list-style-type: none;
+    padding: 2px 0px;
+    text-align: center;
+    background-color:white;
+}
+.order-bar ul li a /*font*/
+{
+    font-size: 16px;
+    font-weight:bold;
+    color : black;
+    text-decoration: none;
+}
+.fa-list-alt
+{
+    margin-right: 5px; 
+    color: black;
+}
+.location-bar
+{
+    position: sticky;
+    height:50px;
+    top: 55px;
+    padding: 0px 30px 30px 20px;
+    background : white;
+    margin-bottom: 20px;
+    z-index : 2; 
+    margin-top:5px;
+}
+.loc-search
+{
+    position: sticky;
+    width: 280px;
+    height: 30px;
+    left: 50px;
+    top: 15px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background: #F5F5F5;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: 1px solid whitesmoke !important;
+}
+.input-loc
+{
+    display: inline-flex;
+}
+.fa-map-marker-alt
+{
+    margin-right: 5px; 
+    color: black;
+}
+.prod
+{
+    padding: 200px 0;
+}
+.material-icons
+{
+    width: 30px;
+    height: 30px;
+}
+.prod-info-main 
+{
+    border: 1px solid #CEEFFF;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    background: #fff;
+    padding: 6px;
+    box-shadow: 0 1px 1px 0 rgba(54, 62, 245, 0.3);
+}
+ 
+.prod-info-main .product-image img
+{
+    height: 250px;  
+    align-items: center;
+}
+ 
+ 
+.product-detail 
+{
+    border-bottom: 1px solid #dfe5e9;
+    padding-bottom: 17px;
+    padding-left: 16px;
+    padding-top: 16px;
+    position: relative;
+    background: #fff;
+}
+ 
+.product-detail h5 a
+{
+    color: black;
+    font-size: 30px;
+    line-height: 19px;
+    text-decoration: none;
+    padding-left: 0;
+    margin-left: 0
+}
+ 
+.product-detail h5 p
+{
+    margin-top: 2px;
+}
+ 
+.prod-info-main .product-detail h5 a span 
+{
+    color: #9aa7af;
+    display: block;
+    font-size: 13px;
+}
+ 
+.prod-info-main .description 
+{
+    font-size: 12.5px;
+    line-height: 20px;
+    padding: 10px 14px 16px 19px;
+    background: #fff
+}
+
+.prod-info-main .product-info 
+{
+    padding: 11px 19px 10px 20px
+}
+ 
+.prod-info-main .product-info a.add-to-cart 
+{
+    color: #2f383d;
+    font-size: 13px;
+    padding-left: 16px;
+}
+ 
+.prod-info-main .name .a 
+{
+    padding: 5px 10px;
+    margin-left: 16px
+}
+ 
+.product-info.smart-form .btn 
+{
+    padding: 6px 12px;
+    margin-left: 12px;
+    margin-top: -10px;
+}
+
+.product-detail.product-image 
+{
+    border-right: 0px solid #fff !important;
+}
+ 
+ 
+ 
+.product-detail .name 
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+ 
+.product-detail .name a 
+{
+    margin-left: 0
+}
+ 
+.product-detail .price-container 
+{
+    font-size: 24px;
+    margin: 0;
+    font-weight: 300;
+}
+ 
+@media only screen and (min-width:1024px) 
+{
+    .prod-info-main div[class*=col-md-4] 
+    {
+        padding-right: 0;
+    }
+ 
+    .prod-info-main div[class*=col-md-8] 
+    {
+        padding: 0 13px 0 0;
+    }
+ 
+    .prod-wrap div[class*=col-md-5] 
+    {
+        padding-right: 0;
+    }
+ 
+    .prod-wrap div[class*=col-md-7] 
+    {
+        padding: 0 13px 0 0;
+    }
+ 
+    .prod-info-main .product-image 
+    {
+        border-right: 1px solid #dfe5e9;
+    }
+ 
+    .prod-info-main .product-info 
+    {
+        position: relative;
+    }
+ 
+}
