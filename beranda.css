@@ -1,0 +1,126 @@
+/* Navbar */
+.nav-link {
+    text-transform: uppercase;
+    margin-right: 40px;
+
+}
+
+.nav-link:hover{
+    border-bottom: 3px solid #0B63DC;
+    margin-bottom: -3px;
+}
+
+/* Utility */
+.tombol {
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+
+
+.kiri {
+    width: 250px;
+    margin-top: 80px;
+    
+}
+
+.jumbotron{
+    text-align: center;
+    margin-top:-400px ;
+    background-color: transparent;
+    text-align: left;
+    margin-left: 700px;
+    font-size: 40px;
+}
+
+.jumbotron .display-4{
+    font-size: 40px;
+    margin-top: 80px;
+}
+
+.jumbotron .love{
+    margin-top: 35px;
+}
+
+.up {
+    margin-top: 100px;
+    background-color: #f6f6f6;
+}
+
+.items{
+    display: flex;
+    margin-top: 50px;
+}
+
+.items .item {
+    width: 280px;
+    height: 280px;
+    background: rgb(119, 121, 124);
+    margin: 30px;
+    margin-left: 100px;
+    border-radius: 20px;
+}
+
+.ups{
+    margin-top: 10px;
+}
+
+.color {
+    background-color: #f6f6f6;
+    height: 480px;    
+}
+
+.o{
+    margin-top: 295px;
+    margin-left: 60px;
+
+}
+
+.oo{
+    
+}
+
+.kirii{
+    margin-bottom: -200px;
+    width: 195px;
+    height: 85px;
+    
+}
+
+.nasyaluv{
+    margin-top: 87px;
+    margin-left: 30px;
+    font-size: 24px;
+}
+
+.milaku{
+    margin-top: 87px;
+    margin-left: 90px;
+    font-size: 24px;
+}
+
+.colorr {
+    background-color: #f6f6f6;
+    height: 520px;    
+}
+
+.tex{
+    text-align: center;
+}
+
+.a{
+    margin-left: 70px;
+    margin-top: 300px;
+    font-size: 20px;
+}
+
+.b{
+    margin-left: 70px;
+    margin-top: 300px;
+    font-size: 20px;
+}
+
+.c{
+    margin-left: 70px;
+    margin-top: 300px;
+    font-size: 20px;
+}
