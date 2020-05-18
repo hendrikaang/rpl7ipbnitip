@@ -1,3 +1,4 @@
+@import "compass/css3";
 *{
     margin: 0;
     padding: 0;
@@ -47,31 +48,28 @@ body {
     padding: 25px 20px;
 }
 
-.product-image { float: left; width: 20%; }
-.product-details { float: left; width: 37%; }
-.product-price { float: left; width: 12%; }
-.product-status { float: left; width: 9%; }
+
+.id-tagihan { float: left; width: 20%; }
+.product-price { float: left; width: 30%; }
+
+.product-line-price { float: left; width: 8%; text-align: right; }
 
 /* This is used as the traditional .clearfix class */
-.shopping-history, .column-labels, .product, .totals-item
+.shopping-cart, .column-labels, .product, .totals-item
 .group:before .group:after 
 {
     content: '';
     display: table;
 } 
-.shopping-history, .column-labels, .product, .totals-item
+.shopping-cart, .column-labels, .product, .totals-item
 .group:after 
 {
     clear: both;
 
 }
-.shopping-history, .column-labels, .product, .totals-item
+.shopping-cart, .column-labels, .product, .totals-item
 .group {
     zoom: 1;
-}
-.shopping-history
-{
-    padding-left: 10px !important;
 }
 
 /* Apply rupiah signs */
@@ -98,21 +96,16 @@ body {
 /* Product entries */
 .product 
 {
-    padding: 0px 30px 150px 20px;
+    padding: 0px 30px 15px 20px;
     margin-bottom: 10px;
-    border-bottom: 1px solid grey;
-    
+    border-bottom: 1px solid grey; 
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+
 }
 
-.product-image
+.id-tagihan
 {
     text-align: center;
 }
-.product-image img
-{
-    width:100px;
-}
-.product-details
-{
-    margin-right: 20px;
-}
+
