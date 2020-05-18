@@ -5,3 +5,5 @@ Selamat datang
 
 <p><a href="logout.php">Logout</a></p>
 <p><a href="profileuser.php">profile</a></p>
+<p><a href="nitip.php">nitip makan</a></p>
+<p>

@@ -1,3 +1,13 @@
+<?php require_once("auth.php"); 
+$id = $_SESSION['masuk'];
+$query = pg_query($db, "SELECT * FROM keranjang WHERE custID=$id");
+if (!$query) {
+  echo "An error occurred.\n";
+  exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +20,11 @@
 <body>
 
 <div class="home-navbar">
-    <div class="logo"><img src="./assets/nitip.png"></div> 
+    <div class="logo"><a href="nitip.php" ><img src="./assets/nitip.png"></a></div> 
        <ul>
-           <li><a href="#"><i class=""></i>Keranjang</a></li>
+           <li><a href=""><i class=""></i>Keranjang</a></li>
            <li><a href="#"><i class=""></i>Bantuan</a></li>
-           <li><a href="#"><i class=""></i>Akun Saya</a></li>
+           <li><a href="profileuser.php"><i class=""></i>Akun Saya</a></li>
        </ul>  
 </div> 
 <div class="shopping-cart">  
@@ -26,54 +36,54 @@
         <label class="product-removal">Remove</label>
         <label class="product-line-price">Total</label>
     </div>
-
+    <?php 
+        $total = 0;
+        while ($row = pg_fetch_assoc($query)) {
+        $produkID = $row['produkID'];
+        $query2 = pg_query($db, "SELECT * FROM produk WHERE produkID = '$produkID'");
+        $produk = pg_fetch_assoc($query2);
+        
+        ?>
     <div class="product">
         <div class="product-image">
             <img src="./assets/makanan1.jpg">
         </div>
         <div class="product-details">
-            <div class="product-title">Seblak</div>
+            <div class="product-title"><? echo($produk['nama']);?></div>
         </div>
-        <div class="product-price">12000</div>
+        <div class="product-price">
+            <? echo($produk['harga']);?>
+        </div>
         <div class="product-quantity">
-            <input type="number" value="1" min="1">
+            <? echo($row['banyak']);?>
         </div>
         <div class="product-removal">
             <button class="remove-product">Remove</button>
         </div>
-        <div class="product-line-price">12000</div>
+        <div class="product-line-price"><? echo($row['banyak']*$produk['harga']);?></div>
     </div>
+    <?$total = $total+($row['banyak']*$produk['harga']); } ?>
 
-    <div class="product">
-        <div class="product-image">
-            <img src="./assets/makanan2.jpg">
-        </div>
-        <div class="product-details">
-            <div class="product-title">Perbobaan Duniawi</div>
-        </div>
-        <div class="product-price">20000</div>
-        <div class="product-quantity">
-            <input type="number" value="1" min="1">
-        </div>
-        <div class="product-removal">
-            <button class="remove-product">Remove</button>
-        </div>
-        <div class="product-line-price">20000</div>
-    </div>
 </div>
-
+    <?
+    if($total>0){
+        $ongkir=5000;
+    }else{
+        $ongkir=0;
+    }
+    ?>
     <div class="totals">
         <div class="totals-item">
             <label>Subtotal</label>
-            <div class="totals-value" id="cart-subtotal">32000</div>
+            <div class="totals-value" id="cart-subtotal"><?echo($total);?></div>
         </div>
         <div class="totals-item">
             <label>Shipping</label>
-            <div class="totals-value" id="cart-shipping">3000</div>
+            <div class="totals-value" id="cart-shipping"><?echo($ongkir);?></div>
         </div>
         <div class="totals-item totals-item-total">
             <label>Grand Total</label>
-            <div class="totals-value" id="cart-total">35000</div>
+            <div class="totals-value" id="cart-total"><?echo($total+$ongkir);?></div>
         </div>
     </div>
     
