@@ -25,7 +25,7 @@ $data = pg_fetch_assoc($query);
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
-      <img src="assets/nitip.png" class="navbar-brand" >
+      <a href="nitip.php"><img src="assets/nitip.png" class="navbar-brand" ></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

@@ -1,4 +1,10 @@
-<?php require_once("auth.php"); ?>
+<?php require_once("auth.php"); 
+$query = pg_query($db, "SELECT * FROM produk");
+if (!$query) {
+  echo "An error occurred.\n";
+  exit;
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +22,7 @@
 
 <body>
     <div class="home-navbar">
-        <div class="logo"><img src="./assets/nitip.png"></div>
+        <div class="logo"><a href=""><img src="./assets/nitip.png"></a></div>
         <input type="text" class="form-control" type="text" placeholder="Mau cari apa?" name="search">
         <div class="input-group-text"><i class="fa fa-search"></i></div>
         <ul>
@@ -39,7 +45,7 @@
  
 <div class="shopping-cart">
     <div class="container">
-            <!-- First product box start here-->
+        <?php while ($row = pg_fetch_assoc($query)) {?>
             <div class="prod-info-main prod-wrap clearfix">
                 <div class="row">
                     <div class="col-md-5 col-sm-12 col-xs-12">
@@ -49,12 +55,12 @@
                     </div>
                     <div class="col-md-7 col-sm-12 col-xs-12">
                         <div class="product-detail">
-                            <h5 class="name"> <a href="#">Seblak</a>
+                            <h5 class="name"> <a href=""><?echo($row['nama']);?></a>
                             <p><i class="material-icons">&#xe55f;</i>Bara</p></h5>
-                            <p class="price-container"><span>Rp 12000</span></p>
+                            <p class="price-container"><span>Rp <?echo($row['harga']);?></span></p>
                         </div>
                         <div class="description">
-                            <p>A Short product description here </p>
+                            <p><?echo($row['deskripsi']); ?></p>
                         </div>
                         <div class="product-info smart-form">
                             <div class="row">
@@ -66,85 +72,8 @@
                     </div>                
                 </div>
             </div>
-            <div class="prod-info-main prod-wrap clearfix">
-                <div class="row">
-                    <div class="col-md-5 col-sm-12 col-xs-12">
-                        <div class="product-image">
-                            <img src="./assets/makanan2.jpg" class="img-responsive">
-                        </div>
-                    </div>
-                    <div class="col-md-7 col-sm-12 col-xs-12">
-                        <div class="product-detail">
-                            <h5 class="name"> <a href="#">Perbobaan</a>
-                            <p><i class="material-icons">&#xe55f;</i>Bateng</p></h5>
-                            <p class="price-container"><span>Rp 20000</span></p>
-                        </div>
-                        <div class="description">
-                            <p>A Short product description here </p>
-                        </div>
-                        <div class="product-info smart-form">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <a href="#" class="btn btn-danger">Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                
-                </div>
-            </div>
-            <div class="prod-info-main prod-wrap clearfix">
-                <div class="row">
-                    <div class="col-md-5 col-sm-12 col-xs-12">
-                        <div class="product-image">
-                            <img src="./assets/makanan3.jpg" class="img-responsive">
-                        </div>
-                    </div>
-                    <div class="col-md-7 col-sm-12 col-xs-12">
-                        <div class="product-detail">
-                            <h5 class="name"> <a href="#">Es Campur</a>
-                            <p><i class="material-icons">&#xe55f;</i>Bara</p></h5>
-                            <p class="price-container"><span>Rp 12000</span></p>
-                        </div>
-                        <div class="description">
-                            <p>A Short product description here </p>
-                        </div>
-                        <div class="product-info smart-form">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <a href="#" class="btn btn-danger">Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                
-                </div>
-            </div>
-            <div class="prod-info-main prod-wrap clearfix">
-                <div class="row">
-                    <div class="col-md-5 col-sm-12 col-xs-12">
-                        <div class="product-image">
-                            <img src="./assets/makanan4.jpg" class="img-responsive">
-                        </div>
-                    </div>
-                    <div class="col-md-7 col-sm-12 col-xs-12">
-                        <div class="product-detail">
-                            <h5 class="name"> <a href="#">Seblak</a>
-                            <p><i class="material-icons">&#xe55f;</i>Bara</p></h5>
-                            <p class="price-container"><span>Rp 12000</span></p>
-                        </div>
-                        <div class="description">
-                            <p>A Short product description here </p>
-                        </div>
-                        <div class="product-info smart-form">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <a href="#" class="btn btn-danger">Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                
-                </div>
-            </div>
-        </div>
+        <?} ?>
+        
     </div>
 </div>
     
