@@ -38,7 +38,7 @@ if (!$query) {
         </div>
         <div class="order-bar">
             <ul>
-                <li><a href="#"><i class="fa fa-list-alt"></i>Order</a></li>
+                <li><a href="cart.php"><i class="fa fa-list-alt"></i>Order</a></li>
             </ul>
         </div>
     </div>
