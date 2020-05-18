@@ -47,7 +47,14 @@ body {
     text-decoration: none;
     padding: 25px 20px;
 }
-
+h1
+{
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-weight: bold;
+    font-size: 30px;
+}
 
 .product-image { float: left; width: 20%; }
 .product-details { float: left; width: 37%; }

@@ -26,7 +26,8 @@ if (!$query) {
            <li><a href="#"><i class=""></i>Bantuan</a></li>
            <li><a href="profileuser.php"><i class=""></i>Akun Saya</a></li>
        </ul>  
-</div> 
+</div>
+<h1>Keranjang</h1> 
 <div class="shopping-cart">  
     <div class="column-labels">
         <label class="product-image">Image</label>
