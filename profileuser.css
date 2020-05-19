@@ -9,20 +9,30 @@
     margin-bottom: -3px;
 }
 
+h1
+{
+    text-align: center;
+    
+    padding-bottom: 25px;
+    font-weight: bold;
+    font-size: 30px;
+}
 .mitracard-container
 {
     width:300px;
-    height: 590px;
+    height: 620px;
     background: white;
     border-radius: 6px;
     position: absolute;
-    top: 70%;
+    margin-bottom: 30px;
+    top: 72%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 1px 1px 10px 1px rgb(133, 118, 160);
     overflow: hideen;
     display: inline-block;
 }
+
 .upper-mitracontainer
 {
     height: 150px;
