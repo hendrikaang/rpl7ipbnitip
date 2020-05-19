@@ -1,3 +1,10 @@
+<?php
+require_once("config.php");
+// ambil topup
+$ambilTopup = pg_query($db, "SELECT * FROM topup WHERE status=0;");
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,9 +30,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">Keranjang</a>
-          <a class="nav-item nav-link" href="#">Bantuan</a>
-          <a class="nav-item nav-link" href="#">Akun Saya</a>
+          <a class="nav-item nav-link" href="">Keranjang</a>
+          <a class="nav-item nav-link" href="">Bantuan</a>
+          <a class="nav-item nav-link" href="">Akun Saya</a>
         </div>
       </div>
     </div>
@@ -42,37 +49,23 @@
         <label class="product-line-price">Konfirm</label>
     </div>
 
+    <?
+    while($dataTopup = pg_fetch_assoc($ambilTopup)){
+      $userID = $dataTopup['userid'];
+      $nominal = $dataTopup['nominal'];
+    ?>
     <div class="product">
         <div class="product-image">
             <img src="./assets/pic1.jpe">
         </div>
         <div class="product-details">
-            <div class="product-title"> 008590478 </div>
+            <div class="product-title"> <?echo($userID);?> </div>
         </div>
-        <div class="product-price">Rp. 150.000</div>
-        <div class="product-line-price"><button class="remove-product">Konfirm</button></div>
+        <div class="product-price">Rp <?echo($nominal);?></div>
+        <div class="product-line-price"><?echo"<a class='remove-product' href='tambahsaldo.php?userid=$userID&nominal=$nominal'>Konfirmasi</a>"?></div>
     </div>
+    <?}?>
 
-    <div class="product">
-        <div class="product-image">
-            <img src="./assets/pic1.jpe">
-        </div>
-        <div class="product-details">
-            <div class="product-title">00857486</div>
-        </div>
-        <div class="product-price">Rp. 100.000</div>
-        <div class="product-line-price"><button class="remove-product">Konfirm</button></div>
-    </div>
-    <div class="product">
-      <div class="product-image">
-          <img src="./assets/pic1.jpe">
-      </div>
-      <div class="product-details">
-          <div class="product-title"> 0085767464 </div>
-      </div>
-      <div class="product-price">Rp. 50.000</div>
-      <div class="product-line-price"><button class="remove-product">Konfim</button></div>
-  </div>
 </div>
 </div>
 </div>
