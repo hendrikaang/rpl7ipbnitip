@@ -1,0 +1,101 @@
+/* Navbar */
+.nav-link {
+    text-transform: uppercase;
+    margin-right: 40px;
+
+}
+
+.nav-link:hover{
+    border-bottom: 3px solid #0B63DC;
+    margin-bottom: -3px;
+}
+
+.wrapper
+{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.upload-product
+{
+    width: auto;
+    max-width: 500px;
+    height: 580px;
+    background: rgba(154, 158, 233, 0.3);
+    margin-top: 150px;
+    padding: 0px 80px;
+    border-radius: 5px;
+    border-radius: 30px;
+}
+
+.title
+{
+    font-size:22px;
+    text-align: center;
+    font-weight: bold;
+    color:  black;
+    padding-top: 15px;
+    padding-bottom: 15px
+} 
+.input-product-field
+{
+    padding: 0 50px;
+}
+.input-product-field .items
+{
+    width: 100%;
+    padding-bottom: 15px;
+}
+.input-product-field .items .label-prod
+{
+    display: block;
+    font-size: 1em;
+    color: black;
+    text-transform: capitalize;
+    padding-bottom: 5px;
+}
+
+.input-product-field .items .input-prod,
+.input-product-field .items .text-area
+{
+    border: 0;
+    width: 100%;
+    padding: 8px 10px;
+    font-size : 14px;
+    color: black;
+    border-radius: 3px;
+}
+.items #deskripsi
+{
+    height: 200px;
+}
+
+.ok{
+    width: 200px;
+    height: 200px;
+}
+
+.upload-btn
+{
+    margin: 0 30px;
+    background: rgb(55, 18, 124);
+    color: seashell;
+    font-size: 14px;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+footer
+{
+    width: 100%;
+    background-color:white ;
+    padding: 10px 0px;
+    margin-top : 50%;
+    text-align: center;
+    font-size: 12px;
+}
