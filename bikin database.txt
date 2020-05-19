@@ -110,3 +110,5 @@ CREATE TABLE topup(
     CONSTRAINT pk_topup PRIMARY KEY (topupID),
     CONSTRAINT fk_topup FOREIGN KEY (userID) REFERENCES nitiperz(userID)
 );
+
+ALTER TABLE orderan ADD idproduk INT;
