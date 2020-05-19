@@ -51,6 +51,7 @@ $ambilTopup = pg_query($db, "SELECT * FROM topup WHERE status=0;");
 
     <?
     while($dataTopup = pg_fetch_assoc($ambilTopup)){
+      $topupID = $dataTopup['topupid'];
       $userID = $dataTopup['userid'];
       $nominal = $dataTopup['nominal'];
     ?>
@@ -62,7 +63,7 @@ $ambilTopup = pg_query($db, "SELECT * FROM topup WHERE status=0;");
             <div class="product-title"> <?echo($userID);?> </div>
         </div>
         <div class="product-price">Rp <?echo($nominal);?></div>
-        <div class="product-line-price"><?echo"<a class='remove-product' href='tambahsaldo.php?userid=$userID&nominal=$nominal'>Konfirmasi</a>"?></div>
+        <div class="product-line-price"><?echo"<a class='remove-product' href='tambahsaldo.php?topupid=$topupID&userid=$userID&nominal=$nominal'>Konfirmasi</a>"?></div>
     </div>
     <?}?>
 
