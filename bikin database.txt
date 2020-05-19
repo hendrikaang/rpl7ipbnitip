@@ -65,6 +65,7 @@ CREATE TABLE keranjang(
     keterangan VARCHAR(150)
 );
 
+
 ALTER TABLE nitiperz ADD CONSTRAINT pk_nitiperz PRIMARY KEY(userID);
 
 ALTER TABLE alamat ADD CONSTRAINT pk_alamat PRIMARY KEY(alamatID);
@@ -88,3 +89,24 @@ ALTER TABLE keranjang ADD CONSTRAINT fk2_keranjang FOREIGN KEY(produkID) REFEREN
 -------------------------------------------------
 ALTER TABLE tagihan ADD total INT;
 ALTER TABLE tagihan ADD alamat TEXT;
+
+CREATE TABLE orderan(
+    idpemesan INT NOT NULL,
+    idmitra INT NOT NULL,
+    idtagihan INT NOT NULL,
+    alamat TEXT,
+    banyak INT DEFAULT 1,
+    status INT DEFAULT 0,
+    CONSTRAINT fk1_orderan FOREIGN KEY (idpemesan) REFERENCES nitiperz(userID),
+    CONSTRAINT fk2_orderan FOREIGN KEY (idmitra) REFERENCES nitiperz(userID),
+    CONSTRAINT fk3_orderan FOREIGN KEY (idtagihan) REFERENCES tagihan(tagihanID)
+);
+
+CREATE TABLE topup(
+    topupID SERIAL,
+    userID INT NOT NULL,
+    nominal INT NOT NULL DEFAULT 0,
+    status INT NOT NULL DEFAULT 0,
+    CONSTRAINT pk_topup PRIMARY KEY (topupID),
+    CONSTRAINT fk_topup FOREIGN KEY (userID) REFERENCES nitiperz(userID)
+);
