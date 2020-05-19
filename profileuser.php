@@ -39,7 +39,7 @@ $data = pg_fetch_assoc($query);
     </div>
     </nav>
     <!-- Akhir navbar -->
-
+    
     <!-- Kotak -->
     <div class="mitracard-container">
       
