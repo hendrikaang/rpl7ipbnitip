@@ -65,7 +65,11 @@ if (!$query) {
                         <div class="product-info smart-form">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a href="#" class="btn btn-danger">Add to cart</a>
+                                    <? 
+                                    $produkID = $row['produkid'];
+                                    $userID = $_SESSION['masuk'];
+                                    echo "<a href='addtocart.php?userid=$userID&produkid=$produkID' class='btn btn-danger'>Add to cart</a>";
+                                    ?>
                                 </div>
                             </div>
                         </div>

@@ -26,8 +26,8 @@ if (!$query) {
            <li><a href="#"><i class=""></i>Bantuan</a></li>
            <li><a href="profileuser.php"><i class=""></i>Akun Saya</a></li>
        </ul>  
-</div>
-<h1>Keranjang</h1> 
+</div> 
+<h1>Keranjang</h1>
 <div class="shopping-cart">  
     <div class="column-labels">
         <label class="product-image">Image</label>
@@ -40,7 +40,7 @@ if (!$query) {
     <?php 
         $total = 0;
         while ($row = pg_fetch_assoc($query)) {
-        $produkID = $row['produkID'];
+        $produkID = $row['produkid'];
         $query2 = pg_query($db, "SELECT * FROM produk WHERE produkID = '$produkID'");
         $produk = pg_fetch_assoc($query2);
         
