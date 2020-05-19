@@ -51,7 +51,7 @@ Gambaran umum fitur perangkat lunak :
 
 
 #### ACTIVITY DIAGRAM
-
+![Activity Diagram](/assets/activity-diagram.png)Activity Diagram
 
 #### GANTT CHART
 
