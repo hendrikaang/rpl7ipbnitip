@@ -54,31 +54,31 @@ Joni adalah seorang mahasiswa IPB tahun pertama, seperti biasa ia akan tinggal d
 Solusi untuk permasalahan Joni adalah, dibutuhkan platform untuk menginformasikan adanya jasa yang sedang dibuka. Untuk awal platform ini akan bisa diakses oleh semua mahasiswa yang tinggal di asrama. Dirancanglah aplikasi ini dengan sifat seller to costumer dalam artian aplikasi web Nitip ini sebagai pihak ketiga antara seller dan buyer.
 
 ### USE CASE DIAGRAM
-![Use Case Diagram](/assets/usecase-diagram.png)Use Case Diagram
+![Use Case Diagram](/assets/usecase-diagram.png)*Use Case Diagram*
 
 
 ### USE CASE DESCRIPTION
 
-![Use Case Description](/assets/usecasedesc1.png)
-![Use Case Description](/assets/usecasedesc2.png)
-![Use Case Description](/assets/usecasedesc3.png)
+![Use Case Description](/assets/usecasedesc1.PNG)
+![Use Case Description](/assets/usecasedesc2.PNG)
+![Use Case Description](/assets/usecasedesc3.PNG)
 
 
 ### ACTIVITY DIAGRAM
 
-![Activity Diagram](/assets/activity-diagram.png)Activity Diagram
+![Activity Diagram](/assets/activity-diagram.png)*Activity Diagram*
 
 
 ### GANTT CHART
-![Gant Chart](/assets/Ganttchart.png)Gantt Chart
+![Gant Chart](/assets/Ganttchart.PNG)*Gantt Chart*
 
 
 ### ERD
-![ER Diagram](/assets/erd.png)ER Diagram
+![ER Diagram](/assets/erd.png)*ER Diagram*
 
 
 ### HASIL IMPLEMENTASI
-![Implementasi](/assets/implementasi1.png)Landing Page
+![Implementasi](/assets/implementasi1.PNG)*Landing Page*
 
 ---
-![Implementasi](/assets/implementasi2.png)Registrasi/Log In
+![Implementasi](/assets/implementasi2.PNG)*Registrasi/Log In*
