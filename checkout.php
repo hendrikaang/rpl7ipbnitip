@@ -1,3 +1,16 @@
+<?php require_once("auth.php"); 
+//ambil userID
+$userID =  $_SESSION['masuk'];
+
+//ambil custID
+$custID= $_GET['custid'];
+$total= $_GET['total'];
+
+//ambil nitiperz
+$ambilNitiperz = pg_query($db, "SELECT * FROM nitiperz WHERE userID=$userID;");
+$dataNitiperz = pg_fetch_assoc($ambilNitiperz);
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,9 +36,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">Keranjang</a>
+          <a class="nav-item nav-link" href="cart.php">Keranjang</a>
           <a class="nav-item nav-link" href="#">Bantuan</a>
-          <a class="nav-item nav-link" href="#">Akun Saya</a>
+          <a class="nav-item nav-link" href="profileuser.php">Akun Saya</a>
         </div>
       </div>
     </div>
@@ -35,30 +48,38 @@
     <!-- Menu mitra -->
     <div class="wrapper">
       <div class="upload-product">
+        <form action="bayar.php" method="POST">
           <div class="title">Checkout</div>
           <div class="input-product-field">
               <div class="items">
                   <label for="barang" class="label-prod">Username :</label>
-                   Abbas zabier mohammad
+                   <?echo($dataNitiperz['nama']);?>
               </div>
               <div class="items">
-                <label for="barang" class="label-prod">Alamat :</label>
-                 085779464377
+                <label for="barang" class="label-prod">Telepon :</label>
+                 <?echo($dataNitiperz['telepon']);?>
             </div>
               <div class="items">
-                  <label for="harga" class="label-prod">Alamat</label>
+                  <label for="harga" class="label-prod">Alamat <a target="_blank" href="https://www.google.com/maps">(google maps)</a></label>
                   <input id="harga" type="text" class="input-prod">
               </div>
               <div class="items">
-                  <label for="deskripsi" class="label-prod">Menu pembayaran</label>
-                  <input type="radio" name="menu pembayaran" value="COD"/> COD <br>
-                  <input type="radio" name="menu pembayaran" value="SALDO"/> SALDO
+                  Total = Rp <?echo($total);?><br>
+                  Saldo = Rp <?echo($dataNitiperz['saldo']);?><br>
+                  <?
+                  if($dataNitiperz['saldo']<$total){
+                    echo"<a href='topup.php'>isi saldo</a>";
+                  }
+                  ?>
               </div>
               <div class="items">
                   <label for="upload-file" class="label-prod"></label>
               </div>
-              <div class="upload-btn">Save</div>
+              <div class="upload-btn">
+                  <input type="submit" name="konfirmasi" value="konfirmasi"/>
+              </div>
           </div>
+        </form>
       </div>
   </div>
 <footer>

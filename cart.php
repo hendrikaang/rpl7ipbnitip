@@ -1,6 +1,12 @@
 <?php require_once("auth.php"); 
 $id = $_SESSION['masuk'];
-$query = pg_query($db, "SELECT * FROM keranjang WHERE custID=$id");
+
+// ambil custID
+$ambilcustomer = pg_query($db, "SELECT * FROM customer WHERE userID=$id;");
+$datacustomer = pg_fetch_assoc($ambilcustomer);
+$custID = $datacustomer['custid'];
+
+$query = pg_query($db, "SELECT * FROM keranjang WHERE custID=$custID");
 if (!$query) {
   echo "An error occurred.\n";
   exit;
@@ -72,6 +78,7 @@ if (!$query) {
     }else{
         $ongkir=0;
     }
+    $biayatotal = $total+$ongkir;
     ?>
     <div class="totals">
         <div class="totals-item">
@@ -84,11 +91,12 @@ if (!$query) {
         </div>
         <div class="totals-item totals-item-total">
             <label>Grand Total</label>
-            <div class="totals-value" id="cart-total"><?echo($total+$ongkir);?></div>
+            <div class="totals-value" id="cart-total"><?echo($biayatotal);?></div>
         </div>
     </div>
-    
-    <button class="checkout" href="#">Checkout</button>
+    <?
+    echo "<a class='checkout' href='checkout.php?custid=$custID&total=$biayatotal'>Checkout</a>";
+    ?>
 
 </div>
 </div>

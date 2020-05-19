@@ -28,6 +28,8 @@ CREATE TABLE alamat(
 CREATE TABLE tagihan(
     tagihanID SERIAL,
     custID INT NOT NULL,
+    total INT,
+    alamat TEXT,
     kedaluarsa TIMESTAMP
 );
 
@@ -63,7 +65,6 @@ CREATE TABLE keranjang(
     keterangan VARCHAR(150)
 );
 
-
 ALTER TABLE nitiperz ADD CONSTRAINT pk_nitiperz PRIMARY KEY(userID);
 
 ALTER TABLE alamat ADD CONSTRAINT pk_alamat PRIMARY KEY(alamatID);
@@ -84,3 +85,6 @@ ALTER TABLE produk ADD CONSTRAINT fk_produk FOREIGN KEY(mitraID) REFERENCES mitr
 ALTER TABLE keranjang ADD CONSTRAINT fk1_keranjang FOREIGN KEY(custID) REFERENCES customer(custID);
 ALTER TABLE keranjang ADD CONSTRAINT fk2_keranjang FOREIGN KEY(produkID) REFERENCES produk(produkID);
 
+-------------------------------------------------
+ALTER TABLE tagihan ADD total INT;
+ALTER TABLE tagihan ADD alamat TEXT;
