@@ -1,0 +1,144 @@
+@import "compass/css3";
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+    font-size: 15px;
+}
+body {
+    margin: 0;
+} 
+
+.home-navbar
+{
+    display: inline-flex;
+    height: 57px;
+    top: 0;
+    background : #fff;
+    margin-bottom:0px;
+    border-bottom: 10px solid white;
+    z-index : 2;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25) !important;
+    width: 100%;
+}
+.logo
+{
+    height: 40px;
+    margin: 5px 10px 10px;
+}
+.home-navbar ul
+{
+    
+    display: flex;
+    padding-left: 55% ;
+    margin: 0;
+    list-style-type: none;
+    background-color: white;
+}
+.home-navbar ul li
+{
+    display: inline-block;
+}
+.home-navbar li a
+{
+   
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 25px 20px;
+}
+h1
+{
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: rgb(182, 167, 211);
+}
+
+
+.cost-nama { float: left; width: 25%; }
+.cost-alamat { float: left; width: 20%; }
+.product-id { float: left; width: 20%; }
+.product-nama { float: left; width: 12%; }
+.product-quantity { float: left; width: 10%; }
+.product-selesai { float: left; width: 9%; }
+.product-line-price { float: left; width: 8%; text-align: right; }
+
+/* This is used as the traditional .clearfix class */
+.pesanan, .column-labels, .product, .totals-item
+.group:before .group:after 
+{
+    content: '';
+    display: table;
+} 
+.pesanan, .column-labels, .product, .totals-item
+.group:after 
+{
+    clear: both;
+
+}
+.pesanan, .column-labels, .product, .totals-item
+.group {
+    zoom: 1;
+}
+
+.column-labels 
+{
+    padding: 30px 30px 30px 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  
+}
+
+.column-labels label
+{
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid grey;
+}
+
+/* Product entries */
+.list
+{
+    padding: 0px 30px 50px 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid grey;
+    
+}
+
+.cost-nama
+{
+    text-align: center;
+}
+.product-image img
+{
+    width:100px;
+}
+.product-nama .product-title 
+{
+    margin-right: 20px;
+    
+}
+
+.product-quantity input 
+{
+    width: 40px;
+}
+
+.selesai
+{
+    border: 0;
+    padding: 4px 8px;
+    background-color:  rgb(55, 18, 124);
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    
+}
+  
+.selesai:hover 
+{
+    background-color:   rgb(105, 90, 133);
+}
