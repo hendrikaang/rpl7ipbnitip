@@ -58,9 +58,8 @@ h1
 }
 
 
-.cost-nama { float: left; width: 25%; }
-.cost-alamat { float: left; width: 20%; }
-.product-id { float: left; width: 20%; }
+.cost-nama { float: left; width: 20%; }
+.product-id { float: left; width: 37%; }
 .product-nama { float: left; width: 12%; }
 .product-quantity { float: left; width: 10%; }
 .product-selesai { float: left; width: 9%; }
