@@ -13,14 +13,14 @@ h1
 {
     text-align: center;
     
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     font-weight: bold;
     font-size: 30px;
 }
 .mitracard-container
 {
     width:300px;
-    height: 620px;
+    height: 650px;
     background: white;
     border-radius: 6px;
     position: absolute;
