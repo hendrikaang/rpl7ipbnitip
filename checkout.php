@@ -76,7 +76,12 @@ $dataNitiperz = pg_fetch_assoc($ambilNitiperz);
                   <label for="upload-file" class="label-prod"></label>
               </div>
               <div class="upload-btn">
-                  <input type="submit" name="konfirmasi" value="konfirmasi"/>
+              <?
+                  if($dataNitiperz['saldo']<$total){
+                    echo"<input type='submit' name='konfirmasi' value='konfirmasi'/>";
+                  }
+              ?>
+                  
               </div>
           </div>
         </form>

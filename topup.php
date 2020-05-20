@@ -38,7 +38,7 @@
   </div>
   <div class="wrapper">
       <div class="upload-product">
-        <form id="topup" class="form" action="bayar.php" method="POST">
+        <form id="topup" class="form" action="bayartopup.php" method="POST">
           <div class="title">Top Up Saldo</div>
           <div class="input-product-field">
               <div class="items">
