@@ -74,7 +74,7 @@ Solusi untuk permasalahan Joni adalah, dibutuhkan platform untuk menginformasika
 
 
 ### ERD
-![ER Diagram](/assets/erd.png)*ER Diagram*
+![ER Diagram](/assets/er-diagram.png)*ER Diagram*
 
 
 ### HASIL IMPLEMENTASI
