@@ -1,7 +1,7 @@
 <?php
 require_once("auth.php");
 
-$userID= $_GET['userid'];
+$userID= $_SESSION['masuk'];
 $produkID= $_GET['produkid'];
 echo("bayar woy $userID $produkID");
 

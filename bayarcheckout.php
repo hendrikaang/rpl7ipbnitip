@@ -36,7 +36,10 @@ if(isset($_POST['konfirmasi'])){
         $query = pg_query($db, "INSERT INTO orderan(idpemesan, idproduk, idmitra, idtagihan, alamat, banyak) 
         VALUES ($userID, $idproduk, $idmitra, $idtagihan, '$alamat', $banyak);");
 
-        $totalharga = $totalharga+($banyak+$harga);
+        $harga = $harga*$banyak;
+        $totalharga = $totalharga+$harga;
+        //delete keranjang
+        $query4 = pg_query($db, "DELETE FROM keranjang WHERE custID=$custID AND produkID=$idproduk");
     }
 }
 
