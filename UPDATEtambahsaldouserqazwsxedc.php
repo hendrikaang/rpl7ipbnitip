@@ -17,7 +17,7 @@ $ambilTopup = pg_query($db, "SELECT * FROM topup WHERE status=0;");
 
     <!-- My CSS -->
     <link rel="stylesheet" href="UPDATEgg.css">
-    <title>Nitip - Menu mitra</title>
+    <title>Admin-tambahsaldo</title>
   </head>
   <body>
     
@@ -57,13 +57,16 @@ $ambilTopup = pg_query($db, "SELECT * FROM topup WHERE status=0;");
     ?>
     <div class="product">
         <div class="product-image">
-            <img src="./assets/pic1.jpe">
+            <img src="./assets/1.jpg">
         </div>
         <div class="product-details">
             <div class="product-title"> <?echo($userID);?> </div>
         </div>
         <div class="product-price">Rp <?echo($nominal);?></div>
-        <div class="product-line-price"><?echo"<a class='remove-product' href='tambahsaldo.php?topupid=$topupID&userid=$userID&nominal=$nominal'>Konfirmasi</a>"?></div>
+        <div class="product-line-price">
+          <?echo"<a class='remove-product' href='tambahsaldo.php?topupid=$topupID&userid=$userID&nominal=$nominal'>Konfirmasi</a>"?>
+          <?echo"<a class='remove-product' href='tolaksaldo.php?topupid=$topupID&userid=$userID&nominal=$nominal'>Tolak</a>"?>
+        </div>
     </div>
     <?}?>
 

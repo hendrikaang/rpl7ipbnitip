@@ -26,7 +26,7 @@ if (!$query) {
         <input type="text" class="form-control" type="text" placeholder="Mau cari apa?" name="search">
         <div class="input-group-text"><i class="fa fa-search"></i></div>
         <ul>
-            <li><a href="uploadproduct.php"><i class=""></i>Upload Produk</a></li>
+            <li><a href="uploadproduct.php"><i class=""></i>Jadi mitra</a></li>
             <li><a href="profileuser.php"><i class=""></i>Akun Saya</a></li>
             <li><a href="logout.php"><i class=""></i>Logout</a></li>
         </ul> 

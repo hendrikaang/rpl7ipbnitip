@@ -112,3 +112,5 @@ CREATE TABLE topup(
 );
 
 ALTER TABLE orderan ADD idproduk INT;
+
+ALTER TABLE tagihan ADD status INT DEFAULT 0;

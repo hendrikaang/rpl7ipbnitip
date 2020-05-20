@@ -65,7 +65,7 @@ if (!$query) {
             <? echo($row['banyak']);?>
         </div>
         <div class="product-removal">
-            <button class="remove-product">Remove</button>
+            <?echo"<a class='remove-product' href='hapusbarang.php?produkid=$produkID&custid=$custID'>Remove</a>"?>
         </div>
         <div class="product-line-price"><? echo($row['banyak']*$produk['harga']);?></div>
     </div>
