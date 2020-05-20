@@ -32,7 +32,7 @@ $data = pg_fetch_assoc($query);
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link" href="cart.php">Keranjang</a>
-          <a class="nav-item nav-link" href="#">Bantuan</a>
+          <a class="nav-item nav-link" href="topup.php">Top Up</a>
           <a class="nav-item nav-link" href="">Akun Saya</a>
         </div>
       </div>

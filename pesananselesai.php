@@ -27,7 +27,7 @@ if($query1){
 }
 
 if($query2){
-    header("Location = pesananmasuk.php");
+    header("Location: pesananmasuk.php");
 } else {
     echo("gagal transfer saldo");
 }

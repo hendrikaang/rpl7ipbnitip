@@ -19,10 +19,10 @@ $saldolama = $dataQuery1['saldo'];
 $saldobaru = $saldolama + $nominal;
 $query2 = pg_query($db, "UPDATE nitiperz SET saldo=$saldobaru WHERE userID=$userID;");
 
-if(query2){
+if($query2){
     // ubah status topup
     $query3 = pg_query($db, "UPDATE topup SET status=1 WHERE topupID=$topupID");
-    header("Location = UPDATEtambahsaldouserqazwsxedc.php");
+    header("Location: UPDATEtambahsaldouserqazwsxedc.php");
 } else {
     echo("tambah saldo gagal dilakukan");
 }

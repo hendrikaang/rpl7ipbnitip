@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
         session_start();
         $_SESSION["masuk"] = $data[userid];
         // login sukses, alihkan ke halaman timeline
-        header("Location: timeline.php");
+        header("Location: nitip.php");
     }
 
 }

@@ -12,8 +12,8 @@
             <div class="logo"><a href="nitip.php"><img src="./assets/nitip.png"></a></div> 
            
                <ul>
-                   <li><a href="#"><i class="cart.php"></i>Keranjang</a></li>
-                   <li><a href="#"><i class=""></i>Bantuan</a></li>
+                   <li><a href="cart.php"><i class=""></i>Keranjang</a></li>
+                   <li><a href="pesananmasuk.php"><i class=""></i>Pesanan masuk</a></li>
                    <li><a href="profileuser.php"><i class=""></i>Akun Saya</a></li>
                </ul>   
        </div>

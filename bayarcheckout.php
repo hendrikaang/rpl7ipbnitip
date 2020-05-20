@@ -17,7 +17,7 @@ $ambilkeranjang = pg_query($db, "SELECT * FROM keranjang WHERE custID=$custID;")
 $query1 = pg_query($db, "INSERT INTO tagihan(custID, total) VALUES ($custID, 0);");
 
 // ambil id tagihan
-$ambiltagihan = pg_query($db, "SELECT * FROM tagihan WHERE custID=$userID AND total=0;");
+$ambiltagihan = pg_query($db, "SELECT * FROM tagihan WHERE custID=$custID AND total=0;");
 $datatagihan = pg_fetch_assoc($ambiltagihan);
 $idtagihan = $datatagihan['tagihanid'];
 
@@ -33,8 +33,8 @@ if(isset($_POST['konfirmasi'])){
         $idmitra = $dataproduk['mitraid'];
         $harga = $dataproduk['harga'];
 
-        $query = pg_query($db, "INSERT INTO orderan(idpemesan, idproduk, id mitra, id tagihan, alamat, banyak) 
-        VALUES ($userID, $idproduk, $idmitra, $idtagihan, $alamat, $banyak);");
+        $query = pg_query($db, "INSERT INTO orderan(idpemesan, idproduk, idmitra, idtagihan, alamat, banyak) 
+        VALUES ($userID, $idproduk, $idmitra, $idtagihan, '$alamat', $banyak);");
 
         $totalharga = $totalharga+($banyak+$harga);
     }
@@ -52,5 +52,7 @@ $datanitiperz = pg_fetch_assoc($ambilnitiperz);
 $saldolama = $datanitiperz['saldo'];
 $saldobaru = $saldolama - $totalharga;
 $query3 = pg_query($db, "UPDATE nitiperz SET saldo=$saldobaru WHERE userID=$userID;");
+
+header("Location: nitip.php");
 
 ?>

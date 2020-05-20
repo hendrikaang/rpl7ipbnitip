@@ -3,8 +3,13 @@ require_once("auth.php");
 // ambil userID
 $userID = $_SESSION['masuk'];
 
+// ambil mitraID
+$ambilMitra = pg_query($db, "SELECT * FROM mitra WHERE userID=$userID;");
+$dataMitra = pg_fetch_assoc($ambilMitra);
+$mitraID = $dataMitra['mitraid'];
+
 // ambil orderan
-$ambilOrderan = pg_query($db, "SELECT * FROM orderan WHERE idmitra=$userID AND status=0;");
+$ambilOrderan = pg_query($db, "SELECT * FROM orderan WHERE idmitra=$mitraID AND status=0;");
 
 ?>
 
@@ -41,10 +46,10 @@ $ambilOrderan = pg_query($db, "SELECT * FROM orderan WHERE idmitra=$userID AND s
     <? while($dataOrderan = pg_fetch_assoc($ambilOrderan)){
         // ambil data produk
         $idproduk = $dataOrderan['idproduk'];
-        $ambilOrderan = pg_query($db, "SELECT * FROM orderan WHERE idproduk=$idproduk;");
-        $dataOrderan = pg_fetch_assoc($ambilOrderan);
-        $namaproduk = $dataOrderan['nama'];
-        $harga = $dataOrderan['harga'];
+        $ambilProduk = pg_query($db, "SELECT * FROM produk WHERE produkid=$idproduk;");
+        $dataProduk = pg_fetch_assoc($ambilProduk);
+        $namaproduk = $dataProduk['nama'];
+        $harga = $dataProduk['harga'];
 
         // ambil data pemesan
         $idpemesan = $dataOrderan['idpemesan'];
@@ -56,11 +61,11 @@ $ambilOrderan = pg_query($db, "SELECT * FROM orderan WHERE idmitra=$userID AND s
         // ambil data orderan
         $alamat = $dataOrderan['alamat'];
         $banyak = $dataOrderan['banyak'];
-        $tagihan = $dataOrderan['tagihan'];
+        $idtagihan = $dataOrderan['idtagihan'];
 
     ?>
     <div class="list">
-        <div class="cost-nama"><?echo($namapemesan($telepon));?></div>
+        <div class="cost-nama"><?echo($namapemesan);?>(<?echo($telepon);?>)</div>
         <div class="cost-alamat"><?echo($alamat);?></div>
         <div class="product-id">
             <div class="product-id"><?echo($idproduk);?></div>

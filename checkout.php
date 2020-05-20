@@ -48,7 +48,7 @@ $dataNitiperz = pg_fetch_assoc($ambilNitiperz);
     <!-- Menu mitra -->
     <div class="wrapper">
       <div class="upload-product">
-        <form action="bayar.php" method="POST">
+        <form action="bayarcheckout.php" method="POST">
           <div class="title">Checkout</div>
           <div class="input-product-field">
               <div class="items">
@@ -61,7 +61,7 @@ $dataNitiperz = pg_fetch_assoc($ambilNitiperz);
             </div>
               <div class="items">
                   <label for="harga" class="label-prod">Alamat <a target="_blank" href="https://www.google.com/maps">(google maps)</a></label>
-                  <input id="harga" type="text" class="input-prod">
+                  <input id="harga" type="text" class="input-prod" name="alamat">
               </div>
               <div class="items">
                   Total = Rp <?echo($total);?><br>
@@ -77,7 +77,7 @@ $dataNitiperz = pg_fetch_assoc($ambilNitiperz);
               </div>
               <div class="upload-btn">
               <?
-                  if($dataNitiperz['saldo']<$total){
+                  if($dataNitiperz['saldo']>$total){
                     echo"<input type='submit' name='konfirmasi' value='konfirmasi'/>";
                   }
               ?>
